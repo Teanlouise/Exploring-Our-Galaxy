@@ -19,18 +19,18 @@ def get_min_rel_intensity(r_exo, r_star):
 
 ######################  some constants used throughout ###########################
 
-# You need to look these up yourself.  Take care with units.
-
-r_star = 1
-
-r_Earth = 1
-
-velocity_Earth = 1
-
-dist_Earth_sun = 1
+# This model detects exoplanets that are orbiting a star with the same size and mass as our sun
+# Radius of star = radius of sun = 695,510km
+r_star = 695510
+# Radius of Earth = 6,371km
+r_Earth = 6371
+# Velocity of Earth = 30km per second
+velocity_Earth = 30
+# Distance from Earth to the sun = 148,180,000km
+dist_Earth_sun = 148180000
 
 ######################  main body of the code here ###########################
 
-# Write the rest of your code here.  
+# Write the rest of your code here.
 # You may call on any of the above functions (and any other functions you chose to write)
 # You may use any of the constants defined above throughout the main body of your code
