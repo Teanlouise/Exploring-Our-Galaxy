@@ -18,6 +18,7 @@ velocity_Earth = 30
 dist_Earth_sun = 148180000
 
 ascii_spaceship = """
+
         |
        / \.
       / _ \.
@@ -28,6 +29,19 @@ ascii_spaceship = """
   /  |  |  |  \.
   |,-'--|--'-.| 
 """
+
+ascii_rocket_launch =  """
+                    .   
+                   .'.
+                   |o|
+                  .'o'.
+                  |.-.|
+                  '   '
+                   ( )
+                    )
+                   ( )
+"""
+
 ascii_planet = """
                  *       +
            '                  |
@@ -65,6 +79,41 @@ ascii_telescope = """
               /`/         \`\.
 """
 
+ascii_space = """
+   .       . 
+ +  :      .
+           :       _
+       .   !   '  (_)
+          ,|.' 
+-  -- ---(-O-`--- --  -
+         ,`|'`.
+       ,   !    .
+           :       :  " 
+           .     --+--
+ .:        .       !
+ """
+
+ascii_rocket_landed = """
+                           *     .--.
+                                / /  `
+               +               | |
+                      '         \ \__,
+                  *          +   '--'  *
+                      +   /\.
+         +              .'  '.   *
+                *      /======\      +
+                      ;:.  _   ;
+                      |:. (_)  |
+                      |:.  _   |
+            +         |:. (_)  |          *
+                      ;:.      ;
+                    .' \:.    / `.
+                   / .-'':._.'`-. \.
+                   |/    /||\    \|
+                 _..--''''````''''--.._
+           _.-'``                    ``'-._
+         -'                                '-
+"""
 
 ######################  functions are defined here ###########################
 
@@ -307,13 +356,11 @@ def get_intensity_plot(transit_time, velocity_exo, r_exo, min_rel_intensity):
     """
 
     # Plot the intensity of light from the star against the times of transit
-    print(
-        "This graph shows the relative intensity of light for a star as your exoplanet travels across the face of it."
-        "\n"
-        "\nWhen the relative intensity is ..."
-        "\n\t 1 \t\t the exoplanet is not in front of the star \t\t (there is no overlap)"
-        "\n\t min \t the exoplanet is completely in front of the star \t (full overlap)."
-        "\n\t other \t the exoplanet is crossing the border of the star \t (partial overlap")
+    print("\nIntensity \t| Exoplanet position \t\t\t| Overlap with star"
+          "\n------------------------------------------------------------------"
+          "\n 1 \t\t| not in front of the star \t\t| None"
+          "\n minimum \t| completely in front of the star \t| Full"
+          "\n other \t\t| crossing the border of the star \t| Partial")
 
     # get the midpoint of the transit time
     midpoint = transit_time / 2
@@ -347,242 +394,269 @@ def get_detection(min_rel_intensity):
         min_rel_intensity: Intensity of star when an exoplanet has full overlap
     """
     if min_rel_intensity <= 0.9999:
+        # Intensity has decreased enough to detect a planet
+        return True
+
+
+def search_again():
+    print(ascii_space)
+    user = float(input("\nDo you want to search again?"
+                         "\n\t(0) Yes"
+                         "\n\t(1) NO"))
+    if user == 0:
         return True
 
 
 ######################  main body of the code here ###########################
 
-def main():
-    """ Logic for the exhibit item on exoplanets at the Science musuem as part
-    of the 'Exploring Our Galaxy Exhibit'
+""" Logic for the exhibit item on exoplanets at the Science musuem as part
+of the 'Exploring Our Galaxy Exhibit'
 
-    Step 1. Introductory message for all patrons and prompt for patron_type
-    Step 2. Print an intro about other potential civilisations in our galaxy
-    Step 3. Ask user what they think is the proportion (or percentage) of
-        habitable planets that develop technological civilisations
-    Step 4. Calculate and print N using their estimation, with a useful message
-    Step 5. Introduce the idea of searching for planets around stars other than
-        our own
-    Step 6. Ask the user for the relative size of the planet they want to find
-        (relative to Earth)
-    Step 7. Ask the user for the distance of the planet to its star
-        (relative to the Earth's distance from the sun)
-    Step 8. Calculate and print each of these values with useful messages
-        (a) the period for the planet's orbit using get_period_of_planet
-        (b) the transit time for the planet using get_transit_time
-        (c) the minimum relative intensity of the planet using get_min_rel_intensity
-    Step 9. The user is not an enthusasiast so continue
-    Step 10. Inform the user whether their chosen planet could be detected or not
-    Step 11. Ask the user if they want to try again with another exoplanet search
-    Step 12. Print a farewell message
+Step 1. Introductory message for all patrons and prompt for patron_type
+Step 2. Print an intro about other potential civilisations in our galaxy
+Step 3. Ask user what they think is the proportion (or percentage) of
+    habitable planets that develop technological civilisations
+Step 4. Calculate and print N using their estimation, with a useful message
+Step 5. Introduce the idea of searching for planets around stars other than
+    our own
+Step 6. Ask the user for the relative size of the planet they want to find
+    (relative to Earth)
+Step 7. Ask the user for the distance of the planet to its star
+    (relative to the Earth's distance from the sun)
+Step 8. Calculate and print each of these values with useful messages
+    (a) the period for the planet's orbit using get_period_of_planet
+    (b) the transit time for the planet using get_transit_time
+    (c) the minimum relative intensity of the planet using get_min_rel_intensity
+Step 9. The user is not an enthusasiast so continue
+Step 10. Inform the user whether their chosen planet could be detected or not
+Step 11. Ask the user if they want to try again with another exoplanet search
+Step 12. Print a farewell message
 
-     Variables:
-        patron_type (int): Whether the user is an enthusasist or a rookie
-        search (Boolean):
-     """
-    # Define constant to allow user to continuously search for exoplanets in step 11
-    search = 1
+ Variables:
+    patron_type (int): Whether the user is an enthusasist or a rookie
+    search (boolean): Default is true to continue search
+ """
+# Define constant to allow user to continuously search for exoplanets in step 11
+searching = True
 
-    # Step 1
-    # todo: Write introduction to exhibit
-    print("Welcome to 'Exploring Our Galaxy'!\n"
-          "This is an exhibit on exoplanets.........\n",
-          ascii_spaceship)
-    patron_type = float(
-        input("Are you a science rookie (1) or a science enthusiast (2)? "))
+# STEP 1
+print("Hope you have been enjoying your time 'Exploring Our Galaxy!'"      
+      "\n"
+      "\nBy know you know that our galaxy is a huge mystery with so much we don't know about."
+      "\n"
+      "\nSo it's easy to start wondering, are there other life forms out there?"
+      "\nIf so, where do they live and how do we find their home?"
+      "\n"
+      "\nJump aboard and let's find out!",
+      ascii_spaceship)
+patron_type = float(input("\nBefore you start your adventure, When it comes to science are you...\n"
+                          "\t(0) a rookie, or\n"
+                          "\t(1) an enthusiast\n"))
 
-    # Remaining steps and text differ for each patron_type
-    if patron_type == 1:
-        # ROOKIE
-        # Part A - Searching for other civilisations
-        # Step 2 - Estimates of civilisations with technology multiplied by 10,000 for easier proportional understanding
-        print("\n*LETS IMAGINE TALKING WITH OTHER LIFE FORMS*\n"
-              "\nThe drake equation is used to guess the chance of finding life on other planets in our galaxy that we would be able to understand.\n"
-              "To work this out we need to know how many planets could have life forms that use technology.\n"
-              "Some guesses to this question have been that out of 10,000 planets there is 1 planet like this and more recently 200 planets.\n"
-              "\nNow it's your turn to guess!", ascii_alien)
+# Remaining steps and text differ for each patron_type
+if patron_type == 0:
+    # ROOKIE
+    print("\nWelcome aboard Rookie! Let's start the countdown..."
+          "\n\t3, \t2, \t1, \tBLAST OFF",
+          ascii_rocket_launch)
+    # Part A - Searching for other civilisations
+    # STEP 2 - Estimates multiplied by 10,000
+    print("\n*LET'S IMAGINE TALKING WITH ALIENS*"
+          "\n"
+          "\nHave you ever wondered the possibility of finding other life forms?"
+          "\nWell, there is an equation that is used to guess the chance of finding life on other planets that we would be able to understand."
+          "\n"
+          "\nTo work this out we need to know how many planets could have life forms that use technology."
+          "\n"
+          "\nSome guesses to this question have been that out of 10,000 planets there is 1 planet and more recently 200 planets.",
+          ascii_alien)
 
-        # Step 3 - Divide c by 10,000 to convert to proportion for drake equation
-        c = float(input(
-            "How many planets do you think there are with technology out of 10,000? "))
-        num_civil = drake_equation(c/ 10000)
+    # STEP 3
+    print("\n--Now it's your turn to guess!--")
+    c = float(input(
+        "\nQ: Out of 10,000 planets, how many planets do you think there are with technology? "))
+    # Divide by 10,000 to get as proportion for drake equaiton
+    num_civil = drake_equation(c / 10000)
 
-        # Step 4
-        print(
-            "\nWith your guess, the number of planets in our galaxy that we could talk to are: ",
-            round(num_civil, 2))
+    # Step 4
+    print(
+        "\nA: With your guess, there are", round(num_civil), "planets in our galaxy that we could talk to."
+        "\n"
+        "\nThis is pretty amazing! Maybe UFO's aren't a conspiracy after all?"
+        "\nSo all these aliens must be living somewhere, but where?")
 
-        # Part B - Searching for exoplanets
-        # Step 5
-        print("\n*NOW, LETS FIND SOME NEW PLANETS*\n"
-              "\nExoplanets are planets that are not a part of our solar system and so they have their own suns.\n"
-              "We can try and find these other planets by watching these other suns and measuring the light from them.\n"
-              "If the sun has less light then a planet must be blocking it. Like when the moon blocks our sun.\n"
-              "There is a telescope that is very good at finding other planets this way and has found thousands.\n"
-              "\nNow it's your turn to try and find an exoplanet!", ascii_telescope)
+    # Part B - Searching for exoplanets
+    # Step 5
+    print("\n*LETS FIND SOME NEW PLANETS*"
+          "\n"
+          "\nExoplanets are planets that are not a part of our solar system and so they have their own suns."
+          "\n"
+          "\nWe can try and find these other planets by watching these other suns and measuring the light from them here on Earth."
+          "\nIf the sun has less light then a planet must be blocking it. Like when the moon blocks our sun."
+          "\n"
+          "\nThere is a telescope that is very good at finding other planets this way and has found thousands.",
+          ascii_telescope)
 
-       # Point where user can search for exoplanets continuously
-        while search == 1:
-            # Step 6 - Divide by 100 to convert to proportion
-            user_size = float(input(
-                "What is the size of the planet you want to find, compared to Earth? (%)\n"
-                "(50) Half the size\n"
-                "(100) The same size\n"
-                "(200) Double the size\n")) / 100
-            # Step 7 - Divide by 100 to convert to proportion
-            user_dist = float(input(
-                "How far away from its sun do you want the planet to be, compared to Earth's distance to our sun? (%)\n"
-                "(50) Closer by half\n"
-                "(100) The same distance\n"
-                "(200) Twice as far\n")) / 100
-            # Step 8
-            r_exo = get_r_exo(user_size)
-            dist_exo_star = get_dist_exo_star(user_dist)
-            velocity_exo = get_velocity_exo(dist_exo_star)
+   # Point where user can search for exoplanets continuously
+    while searching:
+        print("\n--Now it's your turn to try and find an exoplanet!--"
+              "\nTo know the change in light we need to know the size of you planet and how far it is from its sun.")
+        # Step 6 - Divide by 100 to convert to proportion
+        print("\nAs a percentage of Earth and our sun...")
+        user_size = float(input(
+            "\nQ: What is the size of the planet you want to find? (%)"
+            "\n\t(50) Half the size"
+            "\n\t(100) The same size"
+            "\n\t(200) Double the size")) / 100
+        # Step 7 - Divide by 100 to convert to proportion
+        user_dist = float(input(
+            "\nQ: How far away from its sun do you want the planet to be? (%)"
+            "\n\t(50) Closer by half"
+            "\n\t(100) The same distance"
+            "\n\t(200) Twice as far")) / 100
+        # Step 8
+        print("\n--There are now three important things we know about your exoplanet--")
+        r_exo = get_r_exo(user_size)  # km
+        dist_exo_star = get_dist_exo_star(user_dist)  # km
+        velocity_exo = get_velocity_exo(dist_exo_star)  # km/s
 
-            # convert secs to days
-            period = get_period_of_planet(dist_exo_star, velocity_exo) / 86400
-            # convert secs to hours
-            transit_time = get_transit_time(velocity_exo) / 3600
-            min_rel_intensity = get_min_rel_intensity(r_exo)
+        period = get_period_of_planet(dist_exo_star, velocity_exo)  # s
+        transit_time = get_transit_time(velocity_exo)  # s
+        min_rel_intensity = get_min_rel_intensity(r_exo)
 
-            print(
-                "\nThere are now three important things we know about your exoplanet: "
-                "\n(1) The time it takes for your planet to go completely around its star (this is 1 year for Earth) is ",
-                round(period, 2), " days"
+        print("\n(1) The time it takes for your planet to go completely around its star (this is 1 year for Earth) is ",
+            round(period / 86400, 2), " days"
 
-                                  "\n(2) The time it takes for your planet to move acros its star (the bigger the star, the longer this will be) is",
-                round(transit_time, 2), " hours"
+                              "\n(2) The time it takes for your planet to move across its star (the bigger the star, the longer this will be) is",
+            round(transit_time / 3600, 2), " hours"
 
-                                        "\n(3) The brightness of your planet's star from Earth when it is being blocked by your planet is ",
-                round(min_rel_intensity, 6))
+                                    "\n(3) The brightness of your planet's star from Earth when it is being blocked by your planet is ",
+            round(min_rel_intensity, 6), ascii_planet)
 
-            # Step 9 - NOT an enthusiast so continue
-            # Step 10
-            get_detection(min_rel_intensity)
-            print(
-                "To properly find your planet we need to watch the change in light for at least ",
-                round(period * 3, 2), " days")
+        # Step 9 - NOT an enthusiast so continue
+        # Step 10
+        print("\n--Now let's see if we can find your planet--\n"
+              "\nTo find your planet we need to see a certain amount of change in the light of your planet's sun as your planet blocks it."
+              "\nOnce we know if the change is enough, we need to watch it go around its sun at least 3 times to be sure.")
+        if get_detection(min_rel_intensity):
+            print("\nA: Yay - We found your planet!!!")
+            # convert period to from seconds to years and multiply by 3
+            print("To be sure we need to watch it for",
+                  round((period / 31536000) * 3, 2), "years")
+        else:
+            print("\nA: Too bad - We couldn't find your planet")
+        # Step 11
+        searching = search_again()
 
-            # Step 11
-            search = float(input("\nDo you want to search again?\n"
-                                 " (1) Yes\n"
-                                 " (0) NO\n"))
+else:
+    # ENTHUSIAST
+    print("\nWelcome aboard Enthusiast! Let's start the countdown..."
+          "\n\t3, \t2, \t1, \tBLAST OFF",
+          ascii_rocket_launch)
+    # Part A - Searching for other civilisations
+    # Step 2
+    print("\n*LETS IMAGINE POTENTIAL CIVILISATIONS IN THE MILKY WAY*\n"
+          "\nThe drake equation is used as a guide to speculate the probability of finding "
+          "\ncivilisations in the Milky Way with whom it may be possible to communicate."
+          "\n"
+          "\nOne of the factors of this equation is estimating the proportion of potentially "
+          "\nhabitable planets on which a technological civilisation develops."
+          "\n"
+          "\nIn 1960's the proportion was estimated at 0.0001 and more recently at 0.02. ",
+          ascii_alien)
+    # Step 3
+    print("\n--Now its your turn to estimate!--")
+    c = float(input("\nQ: What do you think is the proportion? "))
+    num_civil = drake_equation(c)
+    # Step 4
+    print(
+        "\nA: Using your proportion and the most recent estimates for all other factors,"
+        "\nthere are", round(num_civil), "civilisations in the galaxy that can communicate with Earth!"
+        "\n"
+        "\nThis is pretty amazing! Maybe UFO's aren't a conspiracy after all?"
+        "\nSo all these civilisations must be living somewhere, but where?")
 
+    # Part B - Searching for exoplanets
+    # Step 5
+    print("\n*LETS FIND SOME EXOPLANETS*\n"
+          "\nExoplanets are planets that orbit around stars other than our sun. We can detect "
+          "\nexoplanets by observing the intensity of the light emitted by another star in our "
+          "\ngalaxy as a function of time."
+          "\n"
+          "\nIf an exoplanet passes in front of this star, it partially blocks the star and the "
+          "\nmeasured intensity of the star will slightly decrease. Multiple measurements at "
+          "\nregular intervals can be used to confirm the existence of an exoplanet."
+          "\n"
+          "\nThis method has been very succesful at detecting exoplanets. The Kepler space "
+          "\ntelescope, which uses this approach, has detected several thousand exoplanets.",
+          ascii_telescope)
 
-    else:
-        # ENTHUSIAST
-        # Part A - Searching for other civilisations
-        # Step 2
-        print("\n*LETS IMAGINE POTENTIAL CIVILISATIONS IN THE MILKY WAY*\n"
-              "\nThe drake equation is used as a guide to speculate the probability of finding "
-              "\ncivilisations in the Milky Way with whom it may be possible to communicate."
-              "\n"
-              "\nOne of the factors of this equation is estimating the proportion of potentially "
-              "\nhabitable planets on which a technological civilisation develops."
-              "\n"
-              "\nIn 1960's the proportion was estimated at 0.0001 and more recently at 0.02. ",
-              ascii_alien,
-              "\nNow its your turn to estimate!")
-        # Step 3
-        c = float(input("\nQ: What do you think is the proportion? "))
-        num_civil = drake_equation(c)
-        # Step 4
-        print(
-            "\nA: Using your proportion and the most recent estimates for all other factors,"
-            "\nthere are", round(num_civil), "civilisations in the galaxy that can communicate with Earth!"
+    print("\n--Now it's your turn to try and find an exoplanet!--\n"
+          "\nTo model the transit of the exoplanet in front its star, we need to specify the size of "
+          "\nthe planet and the distance of that planet from its star.")
+    # Point where user can search for exoplanets continuously
+    while searching:
+        # Step 6
+        print("\nAs a proportion of Earth and our sun...")
+        user_size = float(input(
+            "\nQ: What is the size of the planet you want to find?"                
+            "\n\t(0.5) Half the size of Earth"
+            "\n\t(1) Same size as Earth"
+            "\n\t(2) Twice as big"))
+        # Step 7 Ask the user for the distance of the planet to its star
+        user_dist = float(input(
+            "\nQ: How far away from its star do you want the planet to be?"               
+            "\n\t(0.5) Closer by half"
+            "\n\t(1) Same distance"
+            "\n\t(2) Twice as far"))
+        # Step 8
+        print("\n--There are now three important factors that we know about your exoplanet--")
+        r_exo = get_r_exo(user_size) #km
+        dist_exo_star = get_dist_exo_star(user_dist) #km
+        velocity_exo = get_velocity_exo(dist_exo_star) #km/s
+
+        period = get_period_of_planet(dist_exo_star, velocity_exo)
+        transit_time = get_transit_time(velocity_exo)
+        min_rel_intensity = get_min_rel_intensity(r_exo)
+
+        # convert Peroid (s to days) and transit time (s to hr)
+        print("\n(1) Period of orbit is", round(period / 86400, 2), "days"
+            "\nThis is the time for the exoplanet to make one complete orbit around its star (this is 1 year for Earth). "
+            "\nThe period of orbit is determined by the exoplanet's speed, and the distance the exoplanet is from its star."
             "\n"
-            "\nThis is pretty amazing! Maybe UFO's aren't a conspiracy after all?"
-            "\nSo all these civilisations must be living somewhere, but where?")
+            "\n(2) Transit time is", round(transit_time / 3600, 2),"hours"
+            "\nThe velocity of the exoplanet and the diameter of its star will determine the transit time. "
+            "\nThe faster the exoplanet is moving, the shorter the transit time."
+            "\nLikewise the larger the diameter of the star, the longer the transit time."
+            "\n"
+            "\n(3) Minimum relative intensity is ", round(min_rel_intensity, 6),
+            "\nThis is when the exoplanet is fully between Earth and the star i.e. completely overlapping its star."
+            "\nThe intensity of the star observed from Earth will be decreased as the exoplanet blocks some of the light.",
+            ascii_planet)
 
-        # Part B - Searching for exoplanets
-        # Step 5
-        print("\n*LETS FIND SOME EXOPLANETS*\n"
-              "\nExoplanets are planets that orbit around stars other than our sun. We can detect "
-              "\nexoplanets by observing the intensity of the light emitted by another star in our "
-              "\ngalaxy as a function of time."
+        # Step 9 - Is an enthusiast
+        print("\n--Let's see a graph of how the light intensity changes as your exoplanet travels across its face--\n")
+        get_intensity_plot(transit_time, velocity_exo, r_exo, min_rel_intensity)
+
+        # Step 10
+        print("\n--Let's see if we can detect your planet--\n"
+              "\nThe detection limit for Kepler to find a planet is an intensity decrease of 1 part in 10 as the exoplanet transits the star."
               "\n"
-              "\nIf an exoplanet passes in front of this star, it partially blocks the star and the "
-              "\nmeasured intensity of the star will slightly decrease. Multiple measurements at "
-              "\nregular intervals can be used to confirm the existence of an exoplanet."
-              "\n"
-              "\nThis method has been very succesful at detecting exoplanets. The Kepler space "
-              "\ntelescope, which uses this approach, has detected several thousand exoplanets.",
-              ascii_telescope,
-              "\nNow it's your turn to try and find an exoplanet!")
+              "\nTo confirm the existence of an exoplanet multiple measurements at regular intervals (at least 3 periods) can be used.")
 
-        print("\n--STEP 1--\n"
-              "\nTo model the transit of the exoplanet in front its star, we need to specify the size of "
-              "\nthe planet and the distance of that planet from its star.")
-        # Point where user can search for exoplanets continuously
-        while search == 1:
-            # Step 6
-            print("\nAs a proportion of Earth and our sun...")
-            user_size = float(input(
-                "\nQ: What is the size of the planet you want to find?"                
-                "  \n(0.5) Half the size of Earth"
-                "  \n(1) Same size as Earth"
-                "  \n(2) Twice as big"))
-            # Step 7 Ask the user for the distance of the planet to its star
-            user_dist = float(input(
-                "\nQ: How far away from its star do you want the planet to be?"               
-                "  \n(0.5) Closer by half"
-                "  \n(1) Same distance"
-                "  \n(2) Twice as far"))
-            # Step 8
-            print("\n--STEP 2--\n"
-                  "\nThere are now three important factors that we know about your exoplanet:")
-            r_exo = get_r_exo(user_size) #km
-            dist_exo_star = get_dist_exo_star(user_dist) #km
-            velocity_exo = get_velocity_exo(dist_exo_star) #km/s
+        if get_detection(min_rel_intensity):
+            print("\nA: The intensity decreased enough so We detected your planet!!!")
+            # convert period to days and multiply by 3
+            print("To confirm its existence, we would need to take measurements for", round((period / 31536000) * 3, 2), "years")
+        else:
+            print("\nA: The intensity didn't decrease enough to find it.")
 
-            period = get_period_of_planet(dist_exo_star, velocity_exo)
-            transit_time = get_transit_time(velocity_exo)
-            min_rel_intensity = get_min_rel_intensity(r_exo)
+        # Step 11
+        searching = search_again()
 
-            # convert Peroid (s to days) and transit time (s to hr)
-            print("\n(1) Period of orbit is", round(period / 86400, 2), "days"
-                "\nThis is the time for the exoplanet to make one complete orbit around its star (this is 1 year for Earth). "
-                "\nThe period of orbit is determined by the exoplanet's speed, and the distance the exoplanet is from its star."
-                "\n"
-                "\n(2) Transit time is", round(transit_time / 3600, 2),"hours"
-                "\n he velocity of the exoplanet and the diameter of its star will determine the transit time. "
-                "\nThe faster the exoplanet is moving, the shorter the transit time."
-                "\nLikewise the larger the diameter of the star, the longer the transit time."
-                "\n"
-                "\n(3) Minimum relative intensity is ", round(min_rel_intensity, 6),
-                "\n This is when the exoplanet is fully between Earth and the star i.e. completely overlapping its star."
-                "\n The intensity of the star observed from Earth will be decreased as the exoplanet blocks some of the light.")
-
-            # Step 9 - Is an enthusiast
-            print("\n--STEP 3--\n")
-            get_intensity_plot(transit_time, velocity_exo, r_exo, min_rel_intensity)
-
-            # Step 10
-
-
-
-            print("\n--STEP 4--\n"
-                  "\nThe detection limit for Kepler to find a planet is an intensity decrease of 1 part in 10 as the exoplanet transits the star."
-                  "\n"
-                  "\nTo confirm the existence of an exoplanet multiple measurements at regular intervals (at least 3 periods) can be used.",
-                  ascii_planet)
-            print("\nFor your planet..")
-            if get_detection(min_rel_intensity):
-                print("\nThe intensity decreased enough so We detected your planet!!!")
-                # convert period to days and multiply by 3
-                print("To confirm its existence, we would need to take measurements for", round((period / 31536000) * 3, 2), "years")
-            else:
-                print("\nThe intensity didn't decrease enough to find it.")
-
-            # Step 11
-            search = float(input("\nDo you want to search again?\n"
-                                 " (1) Yes\n"
-                                 " (0) NO\n"))
-
-    # Step 12
-    print("Thanks for searching!")
-
-
-if __name__ == "__main__":
-    main()
+# Step 12
+print("\nWelcome back to Earth!"
+      "\nEnjoy your continued adventure of exploring the wonders of our galaxy."
+      "\n"
+      "\nAnd don't forget to keep your eyes open for any UFO's.",
+      ascii_rocket_landed)
