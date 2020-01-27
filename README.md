@@ -37,7 +37,7 @@ science enthusiast, were shown a graph of how the intensity changes. The project
 12. Print a farewell message
     
 ## OUTPUT – ROOKIE
-
+```
 Hope you have been enjoying your time 'Exploring Our Galaxy!'
 
 By know you know that our galaxy is a huge mystery with so much we don't know about it.
@@ -46,7 +46,7 @@ So it's easy to start wondering, are there other life forms out there?
 If so, where do they live and how do we find their home?
 
 Jump aboard and let's find out! 
-```
+
         |
        / \.
       / _ \.
@@ -56,7 +56,7 @@ Jump aboard and let's find out!
    ,'|  |  |`.
   /  |  |  |  \.
   |,-'--|--'-.| 
-```
+
 
 Before you start your adventure, when it comes to science are you...
 	(1) a rookie, or
@@ -66,7 +66,7 @@ Before you start your adventure, when it comes to science are you...
 Welcome aboard Rookie! 
 Let's start the countdown...
 3 	2 	1 	BLAST OFF 
-```
+
                     .   
                    .'.
                    |o|
@@ -76,7 +76,7 @@ Let's start the countdown...
                    ( )
                     )
                    ( )
-```
+
 
 *LET'S IMAGINE TALKING WITH ALIENS*
 
@@ -85,14 +85,14 @@ Well, there is an equation that is used to guess the chance of finding life on o
 
 To work this out we need to know how many planets could have life forms that use technology.
 Some guesses to this question have been that out of 10,000 planets there is 1 planet and more recently 200 planets. 
-```
+
                        .-.
         .-""`""-.    |(@ @)
      _/`oOoOoOoOo`\_ \ \-/
     '.-=-=-=-=-=-=-.' \/ \.
       `-=.=-.-=.=-'    \ /\.
          ^  ^  ^       _H_ \.
- ```
+ 
  
 --Now it's your turn to guess!--
 
@@ -111,7 +111,7 @@ Exoplanets are planets that are not a part of our solar system and so they have 
 We can try and find these other planets by watching these other suns and measuring the light from them here on Earth. If the sun has less light then a planet must be blocking it. Like when the moon blocks our sun.
 
 There is a telescope that is very good at finding other planets this way and has found thousands. 
-```
+
  .    '                   .  "   '
             .  .  .                 '      '
     "`       .   .
@@ -125,7 +125,7 @@ There is a telescope that is very good at finding other planets this way and has
                 /`/ ||  \`\.
                /`/  ||   \`\.
               /`/         \`\.
- ```
+ 
 
 --Now it's your turn to try and find an exoplanet!--
 
@@ -157,7 +157,7 @@ Q: How far away from its sun do you want the planet to be?
 (2) The time it takes for your planet to move across its star (the bigger the star, the longer this will be) is 9.11  hours
 (3) The brightness of your planet's star from Earth when it is being blocked by your planet is 0.999916 
 
-```
+
                  *       +
            '                  |
        ()    .-.,="``"=.    - o -
@@ -168,7 +168,7 @@ Q: How far away from its sun do you want the planet to be?
    +                         +
         O      *        '       .
 
-```
+
 --Now let's see if we can find your planet--
 
 To find your planet we need to see a certain amount of change in the light of your planet's sun as your planet blocks it.
@@ -176,7 +176,7 @@ Once we know if the change is enough, we need to watch it go around its sun at l
 
 A: Sorry...We couldn't find your planet
 
-```
+
    .       . 
  +  :      .
            :       _
@@ -188,7 +188,7 @@ A: Sorry...We couldn't find your planet
            :       :  " 
            .     --+--
  .:        .       !
-```
+
 
 Do you want to search again?
 	(1) Yes
@@ -225,7 +225,7 @@ Q: How far away from its sun do you want the planet to be?
 (2) The time it takes for your planet to move across its star (the bigger the star, the longer this will be) is 18.22 hours
 (3) The brightness of your planet's star from Earth when it is being blocked by your planet is 0.98983 
 
-```
+
                  *       +
            '                  |
        ()    .-.,="``"=.    - o -
@@ -235,7 +235,7 @@ Q: How far away from its sun do you want the planet to be?
             .   '=.__.=' `='      *
    +                         +
         O      *        '       .
-```
+
 
 --Now let's see if we can find your planet--
 
@@ -246,7 +246,7 @@ A: Yay, we found your planet!!!
 
 To be sure we need to watch it for 8.43 years
 
-```
+
    .       . 
  +  :      .
            :       _
@@ -258,7 +258,7 @@ To be sure we need to watch it for 8.43 years
            :       :  " 
            .     --+--
  .:        .       !
- ```
+ 
  
 Do you want to search again?
 	(1) Yes
@@ -269,7 +269,7 @@ Welcome back to Earth!
 
 Continue to enjoy your adventure of exploring the wonders of our galaxy.
 And don't forget to keep your eyes open for any UFO's. 
-```
+
                            *     .--.
                                 / /  `
                +               | |
@@ -295,6 +295,7 @@ And don't forget to keep your eyes open for any UFO's.
 
 ## OUTPUT – ENTHUSIAST
 
+```
 Hope you have been enjoying your time 'Exploring Our Galaxy!'
 
 By know you know that our galaxy is a huge mystery with so much we don't know about it.
@@ -304,7 +305,6 @@ If so, where do they live and how do we find their home?
 
 Jump aboard and let's find out! 
 
-```
         |
        / \.
       / _ \.
@@ -314,7 +314,6 @@ Jump aboard and let's find out!
    ,'|  |  |`.
   /  |  |  |  \.
   |,-'--|--'-.| 
-```
 
 Before you start your adventure, when it comes to science are you...
 	(1) a rookie, or
@@ -324,7 +323,7 @@ Before you start your adventure, when it comes to science are you...
 Welcome aboard Enthusiast! 
 Let's start the countdown...
 3, 	2, 	1, 	BLAST OFF 
-```
+
                     .   
                    .'.
                    |o|
@@ -334,7 +333,6 @@ Let's start the countdown...
                    ( )
                     )
                    ( )
-```
 
 
 *LETS IMAGINE POTENTIAL CIVILISATIONS IN THE MILKY WAY*
@@ -346,14 +344,12 @@ One of the factors of this equation is estimating the proportion of potentially
 habitable planets on which a technological civilisation develops.
 
 In the 1960's the proportion was estimated at 0.0001 and more recently at 0.02.  
-```
                        .-.
         .-""`""-.    |(@ @)
      _/`oOoOoOoOo`\_ \ \-/
     '.-=-=-=-=-=-=-.' \/ \.
       `-=.=-.-=.=-'    \ /\.
          ^  ^  ^       _H_ \.
-```
 
 --Now it’s your turn to estimate!--
 
@@ -377,7 +373,7 @@ of the the star and partially blocking its light from our observation point on E
 
 This method has been very successful at detecting exoplanets. The Kepler space 
 telescope, which uses this approach, has detected several thousand exoplanets.
-```
+
     '                   .  "   '
             .  .  .                 '      '
     "`       .   .
@@ -391,7 +387,6 @@ telescope, which uses this approach, has detected several thousand exoplanets.
                 /`/ ||  \`\.
                /`/  ||   \`\.
               /`/         \`\.
-```
 
 --Now it's your turn to try and find an exoplanet!--
 
@@ -433,7 +428,6 @@ Likewise the larger the diameter of the star, the longer the transit time.
 This is when the exoplanet is fully between Earth and the star i.e. completely overlapping its star.
 The intensity of the star observed from Earth will be decreased as the exoplanet blocks some of the light. 
 
-```
                  *       +
            '                  |
        ()    .-.,="``"=.    - o -
@@ -443,21 +437,20 @@ The intensity of the star observed from Earth will be decreased as the exoplanet
             .   '=.__.=' `='      *
    +                         +
         O      *        '       .
-```
 
 
 --Let's see a graph of how the light intensity changes as your exoplanet travels across its face—
-
-![exoplanet_graph_1](https://user-images.githubusercontent.com/19520346/73152852-2f33c380-411d-11ea-9381-d6e14151464a.png)
-
-This table shows the position of the exoplanet at each time on the graph.
 ```
+![exoplanet_graph_1](https://user-images.githubusercontent.com/19520346/73152852-2f33c380-411d-11ea-9381-d6e14151464a.png)
+```
+This table shows the position of the exoplanet at each time on the graph.
+
 Intensity 	| Exoplanet position	  	| Overlap with star
 ------------------------------------------------------------------------------------------------------------
  1 		| not in front of the star 		| None
  minimum 	| completely in front of the star 	| Full
  other 		| crossing the border of the star 	| Partial
-```
+
 --About the model used and its limitations--
 
 In our quest to find other planets we have made a few key assumptions. One of which is that the amount of light 
@@ -479,7 +472,6 @@ This means the intensity decreased enough to find it.
 
 To confirm its existence, we would need to take measurements for 15.49 years
 
-```
    .       . 
  +  :      .
            :       _
@@ -491,7 +483,6 @@ To confirm its existence, we would need to take measurements for 15.49 years
            :       :  " 
            .     --+--
  .:        .       !
- ```
  
 Do you want to search again?
 	(1) Yes
@@ -538,7 +529,6 @@ Likewise the larger the diameter of the star, the longer the transit time.
 This is when the exoplanet is fully between Earth and the star i.e. completely overlapping its star.
 The intensity of the star observed from Earth will be decreased as the exoplanet blocks some of the light. 
 
-```
                  *       +
            '                  |
        ()    .-.,="``"=.    - o -
@@ -548,19 +538,21 @@ The intensity of the star observed from Earth will be decreased as the exoplanet
             .   '=.__.=' `='      *
    +                         +
         O      *        '       .
- ```
+
 --Let's see a graph of how the light intensity changes as your exoplanet travels across its face--
 
-![exoplanet_graph_2](https://user-images.githubusercontent.com/19520346/73152853-2f33c380-411d-11ea-8499-e56134315e0b.png)
- 
-This table shows the position of the exoplanet at each time on the graph.
 ```
+![exoplanet_graph_2](https://user-images.githubusercontent.com/19520346/73152853-2f33c380-411d-11ea-8499-e56134315e0b.png)
+```
+
+This table shows the position of the exoplanet at each time on the graph.
+
 Intensity 	| Exoplanet position   	| Overlap with star
 ------------------------------------------------------------------------------------------------------------
  1 		| not in front of the star 		| None
  minimum 	| completely in front of the star 	| Full
  other 		| crossing the border of the star 	| Partial
-```
+
 --About the model used and its limitations--
 
 In our quest to find other planets we have made a few key assumptions. One of which is that the amount of light 
@@ -582,7 +574,6 @@ This means the intensity decreased enough to find it.
 
 To confirm its existence, we would need to take measurements for 2.98 years
 
-```
    .       . 
  +  :      .
            :       _
@@ -594,7 +585,6 @@ To confirm its existence, we would need to take measurements for 2.98 years
            :       :  " 
            .     --+--
  .:        .       !
- ```
  
 
 Do you want to search again?
@@ -642,7 +632,6 @@ Likewise the larger the diameter of the star, the longer the transit time.
 This is when the exoplanet is fully between Earth and the star i.e. completely overlapping its star.
 The intensity of the star observed from Earth will be decreased as the exoplanet blocks some of the light. 
 
-```
                  *       +
            '                  |
        ()    .-.,="``"=.    - o -
@@ -652,20 +641,21 @@ The intensity of the star observed from Earth will be decreased as the exoplanet
             .   '=.__.=' `='      *
    +                         +
         O      *        '       .
-```
 
 --Let's see a graph of how the light intensity changes as your exoplanet travels across its face—
 
-![exoplanet_graph_3](https://user-images.githubusercontent.com/19520346/73152854-2f33c380-411d-11ea-92c0-88822fb0d63e.png)
- 
-This table shows the position of the exoplanet at each time.
 ```
+![exoplanet_graph_3](https://user-images.githubusercontent.com/19520346/73152854-2f33c380-411d-11ea-92c0-88822fb0d63e.png)
+```
+
+This table shows the position of the exoplanet at each time.
+
 Intensity 	| Exoplanet position 	   	| Overlap with star
 ---------------------------------------------------------------------------------------------------------------
  1 		| not in front of the star 		| None
  minimum 	| completely in front of the star 	| Full
  other 		| crossing the border of the star 	| Partial
-```
+
 --About the model used and its limitations--
 
 In our quest to find other planets we have made a few key assumptions. One of which is that the amount of light 
@@ -685,7 +675,6 @@ To confirm the existence of an exoplanet multiple measurements at regular interv
 A: Sorry...we couldn't detect your planet.
 This means intensity didn't decrease enough to find it.
 
-```
    .       . 
  +  :      .
            :       _
@@ -697,8 +686,6 @@ This means intensity didn't decrease enough to find it.
            :       :  " 
            .     --+--
  .:        .       !
- ```
- 
 
 Do you want to search again?
 	(1) Yes
@@ -710,7 +697,6 @@ Welcome back to Earth!
 Continue to enjoy your adventure of exploring the wonders of our galaxy.
 And don't forget to keep your eyes open for any UFO's. 
 
-```
                            *     .--.
                                 / /  `
                +               | |
