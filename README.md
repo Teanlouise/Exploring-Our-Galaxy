@@ -2,12 +2,9 @@
 
 ![exoplanet_title](https://user-images.githubusercontent.com/19520346/73152900-5a1e1780-411d-11ea-9ec3-d88945a6fed0.PNG)
 
-This project was submitted for the 'Python and Communication Assignment' for Theory and Practice in Science (SCIE1000) at University of Queensland.
-The purpose of the assessment was to create an exhibit item for a museum as a part of an "Exploring Our Galaxy" exhibition.
-The user can be either a science rookie or a science enthusiast and all communication must be appropriate for the selected audience. 
+This project was submitted for the 'Python and Communication Assignment' for Theory and Practice in Science (SCIE1000) at University of Queensland and received a high distinction. The purpose of the assessment was to create an exhibit item for a museum as a part of an "Exploring Our Galaxy" exhibition. The user can be either a science rookie or a science enthusiast and all communication must be appropriate for the selected audience. 
 
-The first part was to explore the idea of finding civilisations with whome we can communicate and the second part was to detect an exoplanet based on the change of intensity of its sun. In addition,
-science enthusiast, were shown a graph of how the intensity changes. The project was limited to the use of functions, arrays, graphing, while loops and conditionals only.
+The first part was to explore the idea of finding civilisations with whom we can communicate and the second part was to detect an exoplanet based on the change of intensity of its sun. In addition, science enthusiasts were displayed a graph of the sun's change in intensity. The project was limited to the use of functions, arrays, graphing, while loops and conditionals only.
 
 ## LOGIC FOR THE EXHIBIT ITEM:
 
@@ -28,7 +25,7 @@ science enthusiast, were shown a graph of how the intensity changes. The project
 - (a) the period for the planet's orbit using get_period_of_planet
 - (b) the transit time for the planet using get_transit_time
 - (c) the minimum relative intensity of the planet using get_min_rel_intensity
-9. If user is an enthuasiast, 
+9. If user is an enthusiast, 
 - (a) calculate the intensity of light from the star for a series of times and stores these values in an array. 
 - (b) plot a graph of the intensity of light from the star over times as the planet transits across the star.
 - (c) Write a short paragraph about a limitation of the modelling
