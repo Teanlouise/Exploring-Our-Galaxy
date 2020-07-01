@@ -1,6 +1,6 @@
 [Back to Home](https://teanlouise.github.io)
 
-![exoplanet_title](https://user-images.githubusercontent.com/19520346/73152900-5a1e1780-411d-11ea-9ec3-d88945a6fed0.PNG)
+![exoplanet_title](exoplanet_title.PNG)
 
 This project was submitted for the 'Python and Communication Assignment' for Theory and Practice in Science (SCIE1000) at University of Queensland and received a high distinction. The purpose of the assessment was to create an exhibit item for a museum as a part of an "Exploring Our Galaxy" exhibition. The user can be either a science rookie or a science enthusiast and all communication must be appropriate for the selected audience. 
 
@@ -438,7 +438,7 @@ The intensity of the star observed from Earth will be decreased as the exoplanet
 
 --Let's see a graph of how the light intensity changes as your exoplanet travels across its face—
 ```
-![exoplanet_graph_1](https://user-images.githubusercontent.com/19520346/73152852-2f33c380-411d-11ea-9381-d6e14151464a.png)
+![exoplanet_graph_1](exoplanet_graph_1.PNG)
 ```
 This table shows the position of the exoplanet at each time on the graph.
 
@@ -539,7 +539,7 @@ The intensity of the star observed from Earth will be decreased as the exoplanet
 --Let's see a graph of how the light intensity changes as your exoplanet travels across its face--
 
 ```
-![exoplanet_graph_2](https://user-images.githubusercontent.com/19520346/73152853-2f33c380-411d-11ea-8499-e56134315e0b.png)
+![exoplanet_graph_2](exoplanet_graph_2.PNG)
 ```
 
 This table shows the position of the exoplanet at each time on the graph.
@@ -642,7 +642,7 @@ The intensity of the star observed from Earth will be decreased as the exoplanet
 --Let's see a graph of how the light intensity changes as your exoplanet travels across its face—
 
 ```
-![exoplanet_graph_3](https://user-images.githubusercontent.com/19520346/73152854-2f33c380-411d-11ea-92c0-88822fb0d63e.png)
+![exoplanet_graph_3](exoplanet_graph_3.PNG)
 ```
 
 This table shows the position of the exoplanet at each time.
