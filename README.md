@@ -438,7 +438,7 @@ The intensity of the star observed from Earth will be decreased as the exoplanet
 
 --Let's see a graph of how the light intensity changes as your exoplanet travels across its face—
 ```
-![exoplanet_graph_1](exoplanet_graph_1.PNG)
+![exoplanet_graph_1](exoplanet_graph_1.png)
 ```
 This table shows the position of the exoplanet at each time on the graph.
 
@@ -539,7 +539,7 @@ The intensity of the star observed from Earth will be decreased as the exoplanet
 --Let's see a graph of how the light intensity changes as your exoplanet travels across its face--
 
 ```
-![exoplanet_graph_2](exoplanet_graph_2.PNG)
+![exoplanet_graph_2](exoplanet_graph_2.png)
 ```
 
 This table shows the position of the exoplanet at each time on the graph.
@@ -642,7 +642,7 @@ The intensity of the star observed from Earth will be decreased as the exoplanet
 --Let's see a graph of how the light intensity changes as your exoplanet travels across its face—
 
 ```
-![exoplanet_graph_3](exoplanet_graph_3.PNG)
+![exoplanet_graph_3](exoplanet_graph_3.png)
 ```
 
 This table shows the position of the exoplanet at each time.
